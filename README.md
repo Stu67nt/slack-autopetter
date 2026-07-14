@@ -1,6 +1,12 @@
 # Slack Autopetter
 
 ---
+### Example
+
+
+![660416.gif](660416.gif)
+
+---
 
 ### So what are you exactly?
 
