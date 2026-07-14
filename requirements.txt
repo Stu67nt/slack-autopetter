@@ -1,0 +1,4 @@
+requests
+slack_bolt
+dotenv
+pillow
