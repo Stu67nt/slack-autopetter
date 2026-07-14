@@ -1,5 +1,4 @@
 import string
-
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 from dotenv import load_dotenv
@@ -11,7 +10,7 @@ import time
 
 load_dotenv(override=True)
 app = App(token=os.environ.get("SLACK_BOT_TOKEN"))
-avatar_cache = {}
+
 def upload_emoji(name):
 	token = os.environ.get("UPLOAD_TOKEN")
 	headers = {
@@ -31,12 +30,9 @@ def find_valid():
 		channel="C0BH4B8HZ3K",
 		limit=1000
 	)
-	print(lst)
 	valids = []
 	for id in lst["members"]:
-		print(id)
 		info = client.users_info(user=id)
-		print(info)
 		if info["ok"] and info["user"]["is_bot"] == False:
 			valids.append(id)
 	return valids
@@ -44,21 +40,16 @@ def find_valid():
 @app.event("app_mention")
 def handle_mention(event, client, say):
 	print("triggered")
-	say(channel="C0AV9NMSN9L", text="Hai bean!")
 
 @app.event("user_change")
 def handle_user_change(event, client, say):
-	with open("valid_ids.txt", "r") as f:
-		valid_ids = f.readlines()
-		for i, id in enumerate(valid_ids):
-			valid_ids[i] = id[:-1]
-		f.close()
+	valid_ids = find_valid()
 	user_id = event["user"]["id"]
 	display_name = event["user"]["profile"]["display_name"].translate(str.maketrans('', '', string.punctuation)).lower()
 	if user_id in valid_ids:
 		print(event)
 		url = event["user"]["profile"]["image_original"]
-		hash = event["user"]["profile"]["avatar_hash"]
+		pfp_hash = event["user"]["profile"]["avatar_hash"]
 
 		with open("cache.txt", "r+") as f:
 			if f"{hash}\n" not in f.readlines():
@@ -80,9 +71,9 @@ def handle_user_change(event, client, say):
 				f.close()
 				os.remove("temp.png")
 				os.remove("output.gif")
-
-
+			else:
+				print("found in cache")
 
 if __name__ == "__main__":
 	print("starting")
-	# SocketModeHandler(app, os.environ.get("SLACK_APP_TOKEN")).start()
+	SocketModeHandler(app, os.environ.get("SLACK_APP_TOKEN")).start()
