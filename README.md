@@ -10,25 +10,25 @@
 
 ### So what are you exactly?
 
-This is a Slack Bot which automatically tracks updates to your profile picture and will create a pet emoji whenever you change profile picture. So now your pets can always be up to date with no extra effort!
+This is a Slack Bot which automatically tracks updates to your profile picture and will create a pet emoji whenever you change your profile picture. So now your pets can always be up to date with no extra effort!
 
 ---
 
 ### How do I use it?
 
-Join the channel #pfp-petter to consent to your pfp being tracked and then change your profile picture as you would normally on slack. When you change the bot will make the emoji and ping you in the channel with the new pet emoji!
+Join the channel #pfp-petter to consent to your PFP being tracked and then change your profile picture as you would normally on Slack. When you change, the bot will make the emoji and ping you in the channel with the new pet emoji!
 
 ---
 
 ### Who tf needs this? 
 
-Well, I made it because a friend wanted me to make new pet emojis for them whenever they changed profile picture (which was a bit too frequently) so I decided to make a bot to automate it.
+Well, I made it because a friend wanted me to make new pet emojis for them whenever they changed their profile picture (which was a bit too frequently), so I decided to make a bot to automate it.
 
 ---
 
 ### Hosting instructions (Why would you do this?)
 
-Long story short here is how u run it
+Long story short, here is how u run it
 
 - clone the repo 
 - install the requirements.txt
@@ -36,7 +36,7 @@ Long story short here is how u run it
 - add in the .env variable setup as shown below
 - run main.py
 
-Exact commands on Debain Linux (not including .env setup)
+Exact commands on Debian Linux (not including .env setup)
 
     git clone https://github.com/Stu67nt/slack-autopetter
     cd slack-autopetter
@@ -50,19 +50,17 @@ Exact commands on Debain Linux (not including .env setup)
     SLACK_APP_TOKEN=[PASTE TOKEN HERE]
     UPLOAD_TOKEN=[PASTE TOKEN HERE]
 
-To get the Slack bot and app token get them from the Slack developer dashboard.  
-To get the upload token visit #slack-emoji-proxy on the Hack Club Slack and read the pinned message the auth key you get there should be the one pasted to UPLOAD TOKEN.
+To get the Slack bot and app token, get them from the Slack developer dashboard.  
+To get the upload token, visit #slack-emoji-proxy on the Hack Club Slack and read the pinned message. The auth key you get there should be the one pasted to UPLOAD TOKEN.
 
 ---
 
 ### Credits
 
-Huge thanks to @Devarsh on Slack for making the slack emoji proxy which makes uploading slack emoji's automatically INFINITELY EASIER. Genuine lifesaver.
-
-Also thanks to my friend for the inital suggestion!
+Huge thanks to @Devarsh on Slack for making the Slack emoji proxy, which makes uploading Slack emojis automatically INFINITELY EASIER. Genuine lifesaver.
 
 ---
 
-### Future improvemnts (they won't happen)
+### Future improvements (they won't happen)
 
-The petting is just a shitty pet gif overlay so imporving it to be more lively and animated would be a good next step.  
+The petting is just a shitty pet gif overlay, so improving it to be more lively and animated would be a good next step.  
